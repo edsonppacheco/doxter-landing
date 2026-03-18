@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .bg-noise {
+    position: relative;
+  }
+  
+  .bg-noise::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+}
+
+@layer components {
+  /* The Bracket Motif for featured containers (L-shaped corners) */
+  .bracket-container {
+    @apply relative;
+  }
+  
+  .bracket-container::before,
+  .bracket-container::after {
+    content: '';
+    @apply absolute w-8 h-8 pointer-events-none transition-all duration-300;
+  }
+
+  .bracket-container::before {
+    @apply top-0 left-0 border-t-2 border-l-2 border-doxter-blue;
+  }
+
+  .bracket-container::after {
+    @apply bottom-0 right-0 border-b-2 border-r-2 border-doxter-blue;
+  }
+  
+  /* Text logo bracket construction logic */
+  .logo-bracket-left, .logo-bracket-right {
+    @apply relative w-4 h-full inline-block;
+  }
+  
+  .logo-bracket-left::before {
+    content: '';
+    @apply absolute inset-y-1 right-0 w-3 border-l-4 border-t-4 border-b-4 border-ink-black;
+  }
+  
+  .logo-bracket-right::before {
+    content: '';
+    @apply absolute inset-y-1 left-0 w-3 border-r-4 border-t-4 border-b-4 border-ink-black;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    @apply bg-doxter-blue text-paper-white px-8 py-4 rounded-full font-heading font-semibold 
+           hover:bg-[#2A6982] transition-colors relative overflow-hidden tracking-wide;
+  }
+  
+  .btn-outline {
+    @apply border border-ink-black/20 text-ink-black px-8 py-4 rounded-full font-heading font-medium 
+           hover:bg-ink-black/5 transition-colors relative tracking-wide;
+  }
+}
+
+/* Base global styles */
+html, body {
+  @apply bg-paper-white text-ink-black selection:bg-doxter-blue selection:text-white pt-24;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Lucide Icons Custom Draw Animation */
+svg.lucide path,
+svg.lucide circle,
+svg.lucide rect,
+svg.lucide polygon,
+svg.lucide polyline,
+svg.lucide line {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: lucide-draw 2.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes lucide-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
