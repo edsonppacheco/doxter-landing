@@ -62,7 +62,7 @@ export default function Hero() {
           </h1>
           
           <p className="text-lg md:text-xl text-ink-black/70 font-body mb-10 max-w-xl leading-relaxed hero-text">
-            Uma plataforma industrial para validação de colaboradores e subcontratadas. Envie documentos pelo <span className="font-semibold text-ink-black">WhatsApp</span> e nossa IA garante conformidade automática.
+            Uma plataforma de alta performance que automatiza a governança de toda a sua <strong className="text-ink-black font-semibold">cadeia de fornecedores, subcontratadas e colaboradores</strong>. Integre via <span className="font-semibold text-ink-black">WhatsApp</span> e deixe nossa IA garantir conformidade instantânea baseada em documentos da empresa (PGR/PCMSO) e funcionários.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto hero-text">

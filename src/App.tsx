@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import Protocol from './components/Protocol';
 import Philosophy from './components/Philosophy';
+import Contact from './components/Contact';
 import { useMagneticElements } from './hooks/useMagneticElements';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Features />
         <Protocol />
         <Philosophy />
+        <Contact />
       </main>
       
       {/* Site Footer */}
