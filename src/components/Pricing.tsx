@@ -242,7 +242,10 @@ export default function Pricing() {
                 </div>
 
                 {/* CTA */}
-                <button
+                <a
+                  href="https://doxter-dash.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`mt-auto w-full py-3.5 rounded-full font-heading font-semibold text-sm tracking-wide transition-all duration-200 flex items-center justify-center gap-2 group/btn
                     ${plan.featured
                       ? 'bg-doxter-blue text-white hover:bg-[#2A6982] shadow-lg shadow-doxter-blue/25'
@@ -251,7 +254,7 @@ export default function Pricing() {
                 >
                   Começar agora
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </button>
+                </a>
               </div>
             );
           })}

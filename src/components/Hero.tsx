@@ -66,10 +66,10 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto hero-text">
-            <button className="btn-primary flex items-center justify-center gap-2 group shadow-xl shadow-doxter-blue/20">
-              Agendar Demonstração
+            <a href="https://doxter-dash.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-primary flex items-center justify-center gap-2 group shadow-xl shadow-doxter-blue/20">
+              Começar agora grátis!
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
             <button className="btn-outline flex items-center justify-center gap-2 bg-white hover:bg-ink-black/5">
               Como funciona o fluxo
             </button>
