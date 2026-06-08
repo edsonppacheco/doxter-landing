@@ -37,7 +37,7 @@ export default function Navbar() {
           </Link>
         </div>
         
-        <a href="https://doxter-dash.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-primary py-2.5 px-8 text-sm inline-flex items-center justify-center">
+        <a href="https://doxter-dash.vercel.app/#/login" target="_blank" rel="noopener noreferrer" className="btn-primary py-2.5 px-8 text-sm inline-flex items-center justify-center">
           Login
         </a>
       </div>

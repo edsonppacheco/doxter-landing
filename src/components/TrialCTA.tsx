@@ -97,7 +97,7 @@ export default function TrialCTA() {
         {/* CTA Buttons */}
         <div className="trial-content flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
-            href="https://doxter-dash.vercel.app/"
+            href="https://doxter-dash.vercel.app/#/registro"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 bg-doxter-blue text-white px-10 py-5 rounded-full font-heading font-bold text-lg tracking-wide hover:bg-[#2A6982] transition-all shadow-2xl shadow-doxter-blue/30 hover:shadow-doxter-blue/50 hover:scale-[1.02]"

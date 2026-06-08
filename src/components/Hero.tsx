@@ -66,7 +66,7 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto hero-text">
-            <a href="https://doxter-dash.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-primary flex items-center justify-center gap-2 group shadow-xl shadow-doxter-blue/20">
+            <a href="https://doxter-dash.vercel.app/#/registro" target="_blank" rel="noopener noreferrer" className="btn-primary flex items-center justify-center gap-2 group shadow-xl shadow-doxter-blue/20">
               Começar agora grátis!
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>

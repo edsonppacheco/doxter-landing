@@ -243,7 +243,7 @@ export default function Pricing() {
 
                 {/* CTA */}
                 <a
-                  href="https://doxter-dash.vercel.app/"
+                  href="https://doxter-dash.vercel.app/#/registro"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`mt-auto w-full py-3.5 rounded-full font-heading font-semibold text-sm tracking-wide transition-all duration-200 flex items-center justify-center gap-2 group/btn
