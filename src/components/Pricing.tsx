@@ -154,10 +154,10 @@ export default function Pricing() {
             type="button"
             onClick={(e) => { e.preventDefault(); setAnnual(v => !v); }}
             aria-label="Alternar entre plano mensal e anual"
-            className={`relative w-14 h-7 rounded-full transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-doxter-blue flex-shrink-0 ${annual ? 'bg-doxter-blue' : 'bg-ink-black/20'}`}
+            className={`relative w-14 h-7 rounded-full transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-doxter-blue flex-shrink-0 overflow-hidden ${annual ? 'bg-doxter-blue' : 'bg-ink-black/20'}`}
           >
             <span
-              className={`absolute top-1 w-5 h-5 bg-white rounded-full shadow-md transition-transform duration-300 ${annual ? 'translate-x-8' : 'translate-x-1'}`}
+              className={`absolute top-1 left-1 w-5 h-5 bg-white rounded-full shadow transition-transform duration-300 ${annual ? 'translate-x-7' : 'translate-x-0'}`}
             />
           </button>
           <span className={`font-heading font-semibold text-sm transition-colors flex items-center gap-2 ${annual ? 'text-ink-black' : 'text-ink-black/35'}`}>
