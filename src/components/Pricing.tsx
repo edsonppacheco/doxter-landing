@@ -10,21 +10,21 @@ const plans = [
     name: 'Essencial',
     colabs: 10,
     docs: 150,
-    monthly: 79,
-    pricePerColabMonthly: 7.90,
-    annual: 790,
-    monthlyInAnnual: 65.83,
-    pricePerColabAnnual: 6.58,
+    monthly: 89,
+    pricePerColabMonthly: 8.90,
+    annual: 890,
+    monthlyInAnnual: 74.17,
+    pricePerColabAnnual: 7.42,
   },
   {
     name: 'Essencial Plus',
     colabs: 25,
     docs: 375,
-    monthly: 174,
-    pricePerColabMonthly: 6.96,
-    annual: 1740,
-    monthlyInAnnual: 145.00,
-    pricePerColabAnnual: 5.80,
+    monthly: 199,
+    pricePerColabMonthly: 7.96,
+    annual: 1990,
+    monthlyInAnnual: 165.83,
+    pricePerColabAnnual: 6.63,
   },
   {
     name: 'Profissional',
@@ -45,17 +45,16 @@ const plans = [
     annual: 5990,
     monthlyInAnnual: 499.17,
     pricePerColabAnnual: 4.99,
-    featured: true,
   },
   {
     name: 'Business Plus',
     colabs: 150,
     docs: 2250,
-    monthly: 899,
-    pricePerColabMonthly: 5.99,
-    annual: 8990,
-    monthlyInAnnual: 749.17,
-    pricePerColabAnnual: 4.99,
+    monthly: 849,
+    pricePerColabMonthly: 5.66,
+    annual: 8490,
+    monthlyInAnnual: 707.50,
+    pricePerColabAnnual: 4.72,
   },
   {
     name: 'Corporativo',
@@ -72,7 +71,7 @@ const plans = [
     colabs: 500,
     docs: 7500,
     monthly: 2499,
-    pricePerColabMonthly: 4.99,
+    pricePerColabMonthly: 5.00,
     annual: 24990,
     monthlyInAnnual: 2082.50,
     pricePerColabAnnual: 4.17,
@@ -152,9 +151,10 @@ export default function Pricing() {
             Mensal
           </span>
           <button
-            onClick={() => setAnnual(v => !v)}
+            type="button"
+            onClick={(e) => { e.preventDefault(); setAnnual(v => !v); }}
             aria-label="Alternar entre plano mensal e anual"
-            className={`relative w-14 h-7 rounded-full transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-doxter-blue ${annual ? 'bg-doxter-blue' : 'bg-ink-black/20'}`}
+            className={`relative w-14 h-7 rounded-full transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-doxter-blue flex-shrink-0 ${annual ? 'bg-doxter-blue' : 'bg-ink-black/20'}`}
           >
             <span
               className={`absolute top-1 w-5 h-5 bg-white rounded-full shadow-md transition-transform duration-300 ${annual ? 'translate-x-8' : 'translate-x-1'}`}
@@ -163,7 +163,7 @@ export default function Pricing() {
           <span className={`font-heading font-semibold text-sm transition-colors flex items-center gap-2 ${annual ? 'text-ink-black' : 'text-ink-black/35'}`}>
             Anual
             <span className="px-2 py-0.5 bg-compliance-green/15 text-compliance-green text-[10px] rounded-full font-mono font-bold tracking-wide">
-              2 MESES GRÁTIS
+              1 MÊS GRÁTIS
             </span>
           </span>
         </div>
@@ -182,29 +182,19 @@ export default function Pricing() {
             return (
               <div
                 key={plan.name}
-                className={`pricing-card relative rounded-[2rem] p-8 flex flex-col transition-all duration-300 group
-                  ${plan.featured
-                    ? 'bg-ink-black text-paper-white shadow-2xl shadow-doxter-blue/15 ring-1 ring-doxter-blue/30 xl:scale-[1.03] xl:-translate-y-1'
-                    : 'bg-white border border-ink-black/8 hover:border-doxter-blue/25 hover:shadow-xl hover:shadow-doxter-blue/5 hover:-translate-y-1'
-                  }`}
+                className="pricing-card relative rounded-[2rem] p-8 flex flex-col transition-all duration-300 group bg-white border border-ink-black/8 hover:border-doxter-blue/25 hover:shadow-xl hover:shadow-doxter-blue/5 hover:-translate-y-1"
               >
-                {plan.featured && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-doxter-blue text-white text-[10px] font-heading font-bold tracking-widest uppercase rounded-full shadow-lg whitespace-nowrap">
-                    Mais Popular
-                  </div>
-                )}
-
                 {/* Plan name */}
                 <div className="mb-6">
-                  <h3 className={`text-xl font-heading font-extrabold mb-3 ${plan.featured ? 'text-white' : 'text-ink-black'}`}>
+                  <h3 className="text-xl font-heading font-extrabold mb-3 text-ink-black">
                     {plan.name}
                   </h3>
                   <div className="flex flex-col gap-1.5">
-                    <div className={`flex items-center gap-2 text-xs font-mono ${plan.featured ? 'text-white/50' : 'text-ink-black/45'}`}>
+                    <div className="flex items-center gap-2 text-xs font-mono text-ink-black/45">
                       <Users className="w-3.5 h-3.5 flex-shrink-0" />
                       até {fmtInt(plan.colabs)} colaboradores
                     </div>
-                    <div className={`flex items-center gap-2 text-xs font-mono ${plan.featured ? 'text-white/50' : 'text-ink-black/45'}`}>
+                    <div className="flex items-center gap-2 text-xs font-mono text-ink-black/45">
                       <FileText className="w-3.5 h-3.5 flex-shrink-0" />
                       {fmtInt(plan.docs)} documentos
                     </div>
@@ -214,29 +204,25 @@ export default function Pricing() {
                 {/* Main price */}
                 <div className="mb-1">
                   <div className="flex items-start gap-0.5">
-                    <span className={`text-sm font-mono mt-2 ${plan.featured ? 'text-white/50' : 'text-ink-black/40'}`}>R$</span>
-                    <span className={`text-5xl font-heading font-extrabold tracking-tighter leading-none ${plan.featured ? 'text-white' : 'text-ink-black'}`}>
+                    <span className="text-sm font-mono mt-2 text-ink-black/40">R$</span>
+                    <span className="text-5xl font-heading font-extrabold tracking-tighter leading-none text-ink-black">
                       {intPart}
                     </span>
-                    <span className={`text-lg font-heading font-bold mt-2 ${plan.featured ? 'text-white/70' : 'text-ink-black/60'}`}>
+                    <span className="text-lg font-heading font-bold mt-2 text-ink-black/60">
                       ,{decPart}
                     </span>
                   </div>
-                  <p className={`text-xs font-mono mt-1 ${plan.featured ? 'text-white/40' : 'text-ink-black/35'}`}>
+                  <p className="text-xs font-mono mt-1 text-ink-black/35">
                     /mês{annual ? `, cobrado R$ ${fmtInt(plan.annual)}/ano` : ''}
                   </p>
                 </div>
 
                 {/* Price per colab — highlighted */}
-                <div className={`flex items-center gap-2 py-3 px-4 rounded-xl my-6 border ${
-                  plan.featured
-                    ? 'bg-doxter-blue/20 border-doxter-blue/30'
-                    : 'bg-doxter-blue/5 border-doxter-blue/10'
-                }`}>
+                <div className="flex items-center gap-2 py-3 px-4 rounded-xl my-6 border bg-doxter-blue/5 border-doxter-blue/10">
                   <span className="text-base font-heading font-extrabold text-doxter-blue">
                     R$ {fmt(currentPricePerColab)}
                   </span>
-                  <span className={`text-[11px] font-mono leading-tight ${plan.featured ? 'text-white/50' : 'text-ink-black/40'}`}>
+                  <span className="text-[11px] font-mono leading-tight text-ink-black/40">
                     por colab/mês
                   </span>
                 </div>
@@ -246,11 +232,7 @@ export default function Pricing() {
                   href="https://doxter-dash.vercel.app/#/registro"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`mt-auto w-full py-3.5 rounded-full font-heading font-semibold text-sm tracking-wide transition-all duration-200 flex items-center justify-center gap-2 group/btn
-                    ${plan.featured
-                      ? 'bg-doxter-blue text-white hover:bg-[#2A6982] shadow-lg shadow-doxter-blue/25'
-                      : 'border border-ink-black/15 text-ink-black hover:bg-ink-black hover:text-white hover:border-ink-black'
-                    }`}
+                  className="mt-auto w-full py-3.5 rounded-full font-heading font-semibold text-sm tracking-wide transition-all duration-200 flex items-center justify-center gap-2 group/btn border border-ink-black/15 text-ink-black hover:bg-ink-black hover:text-white hover:border-ink-black"
                 >
                   Começar agora
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -262,7 +244,7 @@ export default function Pricing() {
 
         {/* Footnote */}
         <p className="text-center text-xs text-ink-black/35 font-body mt-12 max-w-2xl mx-auto leading-relaxed">
-          * Plano anual equivale a 10x o valor mensal — 2 meses grátis (16,7% de desconto). Todos os planos incluem 15 documentos compartilhados por colaborador.
+          * Plano anual equivale a 10x o valor mensal — 1 mês grátis incluído. Todos os planos incluem 15 documentos compartilhados por colaborador.
         </p>
       </div>
     </section>
