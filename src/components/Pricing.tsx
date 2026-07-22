@@ -168,6 +168,20 @@ export default function Pricing() {
           </span>
         </div>
 
+        {/* Free trial CTA */}
+        <div className="text-center mb-12 pricing-header">
+          <a
+            href="https://doxter-dash.vercel.app/registro"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-doxter-blue text-white rounded-full font-heading font-bold text-base shadow-lg shadow-doxter-blue/25 hover:bg-[#2A6982] transition-all duration-200 hover:-translate-y-0.5"
+          >
+            <span>Teste grátis por 30 dias</span>
+            <span className="text-white/70 font-normal text-sm">— sem cartão de crédito</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+
         {/* Cards */}
         <div className="pricing-grid grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {plans.map((plan) => {
@@ -229,7 +243,7 @@ export default function Pricing() {
 
                 {/* CTA */}
                 <a
-                  href="https://doxter-dash.vercel.app/#/registro"
+                  href="https://doxter-dash.vercel.app/registro"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-auto w-full py-3.5 rounded-full font-heading font-semibold text-sm tracking-wide transition-all duration-200 flex items-center justify-center gap-2 group/btn border border-ink-black/15 text-ink-black hover:bg-ink-black hover:text-white hover:border-ink-black"
