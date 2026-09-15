@@ -107,6 +107,7 @@ export default function TrialCTA() {
           </a>
           <Link
             to="/precos"
+            onClick={() => window.scrollTo(0, 0)}
             className="inline-flex items-center gap-2 text-white/50 font-heading font-medium text-sm hover:text-white transition-colors px-4 py-3"
           >
             Ver planos e preços
