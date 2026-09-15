@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
@@ -8,6 +9,12 @@ import TrialCTA from './components/TrialCTA';
 import Contact from './components/Contact';
 import Pricing from './components/Pricing';
 import { useMagneticElements } from './hooks/useMagneticElements';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 
 function HomePage() {
   return (
@@ -36,6 +43,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-noise relative text-ink-black font-body overflow-hidden">
+      <ScrollToTop />
       <Navbar />
 
       <Routes>
